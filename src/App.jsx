@@ -334,7 +334,18 @@ export default function Portfolio() {
                           <p style={{ marginTop: '8px', fontSize: '0.875rem', lineHeight: '1.75' }}>
                             {exp.description}
                           </p>
-                          <ul style={{ marginTop: '8px', display: 'flex', flexWrap: 'wrap', gap: '8px' }} aria-label="Technologies used">
+                          <ul 
+  style={{ 
+    marginTop: '8px', 
+    display: 'flex', 
+    flexWrap: 'wrap', 
+    gap: '8px',
+    listStyle: 'none',
+    padding: 0,
+    margin: 0
+  }} 
+  aria-label="Technologies used"
+>
                             {exp.tech.map((tech, i) => (
                               <li key={i}>
                                 <div className="tech-tag">
@@ -367,30 +378,52 @@ export default function Portfolio() {
                 <h2 style={sectionHeadingStyle}>Projects</h2>
               </div>
               <div>
-                <ul className="group/list">
+                <ul className="group/list" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+
                   {portfolioData.projects.map((project, index) => (
                     <li key={index} style={{ marginBottom: '48px' }}>
                       <div className="group project-card" style={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(8, 1fr)', gap: '16px', paddingBottom: '4px' }}>
                         <div className="hover-effect"></div>
                         <div style={{ gridColumn: 'span 6', order: 2, zIndex: 10 }}>
-                          <h3>
-                            <a 
-                              className="group/link"
-                              href={project.external}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{ display: 'inline-flex', alignItems: 'baseline', fontWeight: '500', color: '#e2e8f0', fontSize: '1rem' }}
-                            >
-                              <span>
-                                {project.title}
-                                <ExternalLink className="external-link-icon" style={{ marginLeft: '4px', width: '16px', height: '16px', display: 'inline-block' }} />
-                              </span>
-                            </a>
-                          </h3>
+                          <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+  <span style={{ fontWeight: '500', fontSize: '1rem', color: '#e2e8f0' }}>
+    {project.title}
+  </span>
+  {/* External link */}
+  <a 
+    href={project.external} 
+    target="_blank" 
+    rel="noreferrer" 
+    style={{ display: 'inline-block', color: '#94a3b8' }}
+  >
+    <ExternalLink style={{ width: '16px', height: '16px' }} />
+  </a>
+  {/* GitHub link */}
+  <a 
+    href={project.github} 
+    target="_blank" 
+    rel="noreferrer" 
+    style={{ display: 'inline-block', color: '#94a3b8' }}
+  >
+    <Github style={{ width: '16px', height: '16px' }} />
+  </a>
+</h3>
+
                           <p style={{ marginTop: '8px', fontSize: '0.875rem', lineHeight: '1.75' }}>
                             {project.description}
                           </p>
-                          <ul style={{ marginTop: '8px', display: 'flex', flexWrap: 'wrap', gap: '8px' }} aria-label="Technologies used">
+                          <ul 
+  style={{ 
+    marginTop: '8px', 
+    display: 'flex', 
+    flexWrap: 'wrap', 
+    gap: '8px',
+    listStyle: 'none',
+    padding: 0,
+    margin: 0
+  }} 
+  aria-label="Technologies used"
+>
                             {project.tech.map((tech, i) => (
                               <li key={i}>
                                 <div className="tech-tag">
