@@ -1,0 +1,397 @@
+/* ============================================
+   APP.CSS - Main Portfolio Styles
+   ============================================ */
+
+/* Import Inter Font */
+@import url('https://rsms.me/inter/inter.css');
+
+/* ============================================
+   VARIABLES
+   ============================================ */
+:root {
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;
+  --teal-900: #134e4a;
+  
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* ============================================
+   NAVIGATION STYLES
+   ============================================ */
+.nav-indicator {
+  height: 1px;
+  margin-right: 16px;
+  background-color: var(--slate-600);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+}
+
+nav a.active .nav-indicator {
+  width: 64px;
+  background-color: var(--slate-200);
+}
+
+nav a:hover .nav-indicator {
+  width: 64px;
+  background-color: var(--slate-200);
+}
+
+.nav-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  transition: color 0.3s ease;
+}
+
+nav a.active .nav-text {
+  color: var(--slate-200);
+}
+
+nav a:hover .nav-text {
+  color: var(--slate-200);
+}
+
+/* ============================================
+   SOCIAL LINKS
+   ============================================ */
+ul[aria-label="Social media"] a {
+  transition: all 0.3s ease;
+}
+
+ul[aria-label="Social media"] a:hover {
+  color: var(--slate-200);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   EXPERIENCE & PROJECT CARDS
+   ============================================ */
+.experience-card,
+.project-card {
+  position: relative;
+  border-radius: 8px;
+  padding: 4px 0;
+  transition: all 300ms ease;
+}
+
+/* Card hover effect for large screens */
+@media (min-width: 1024px) {
+  .experience-card .hover-effect,
+  .project-card .hover-effect {
+    position: absolute;
+    inset: -16px -24px;
+    z-index: 0;
+    border-radius: 8px;
+    opacity: 0;
+    background-color: rgba(30, 41, 59, 0.5);
+    box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+    transition: opacity 300ms ease;
+    pointer-events: none;
+  }
+  
+  .experience-card:hover .hover-effect,
+  .project-card:hover .hover-effect {
+    opacity: 1;
+  }
+  
+  /* Group hover effect for list opacity */
+  .group\/list:hover .experience-card,
+  .group\/list:hover .project-card {
+    opacity: 0.5;
+  }
+  
+  .group\/list .experience-card:hover,
+  .group\/list .project-card:hover {
+    opacity: 1 !important;
+  }
+}
+
+/* ============================================
+   LINKS & BUTTONS
+   ============================================ */
+.link-underline {
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 300ms ease;
+}
+
+.group:hover .link-underline {
+  border-bottom-color: var(--teal-300);
+}
+
+/* External link icon animation */
+.external-link-icon {
+  display: inline-block;
+  margin-left: 4px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 300ms ease;
+  transform: translateY(1px);
+}
+
+.group\/link:hover .external-link-icon {
+  transform: translate(4px, -4px);
+}
+
+/* Resume link */
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--slate-200);
+  transition: all 300ms ease;
+}
+
+.resume-link .icon-arrow {
+  margin-left: 4px;
+  width: 16px;
+  height: 16px;
+  transition: transform 300ms ease;
+}
+
+.resume-link:hover .icon-arrow {
+  transform: translateX(8px);
+}
+
+/* ============================================
+   TECHNOLOGY TAGS
+   ============================================ */
+.tech-tag {
+  background-color: rgba(94, 234, 212, 0.1);
+  color: var(--teal-300);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* ============================================
+   SECTION HEADINGS (MOBILE)
+   ============================================ */
+.section-heading-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-bottom: 16px;
+  width: 100vw;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 20px 24px;
+}
+
+@media (min-width: 768px) {
+  .section-heading-sticky {
+    margin-left: -48px;
+    margin-right: -48px;
+    padding: 20px 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-heading-sticky {
+    position: relative;
+    top: auto;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   GRADIENT CURSOR EFFECT
+   ============================================ 
+.gradient-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  transition: background 300ms ease;
+}
+
+/* ============================================
+   PROJECT IMAGE PLACEHOLDER
+   ============================================ */
+.project-image-placeholder {
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid rgba(226, 232, 240, 0.1);
+  background-color: var(--slate-800);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.folder-icon {
+  color: var(--slate-400);
+  width: 48px;
+  height: 48px;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--slate-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--slate-700);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--slate-600);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--slate-700) var(--slate-800);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+.nav-indicator,
+.nav-text {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+@media (max-width: 1023px) {
+  nav {
+    display: none !important;
+  }
+  
+  .portfolio-layout {
+    flex-direction: column !important;
+  }
+  
+  .portfolio-header {
+    position: relative !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+    padding-bottom: 48px !important;
+  }
+  
+  main {
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus styles */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--teal-300);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .gradient-overlay {
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .gradient-overlay,
+  nav,
+  ul[aria-label="Social media"],
+  .resume-link {
+    display: none;
+  }
+  
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  .section-heading-sticky {
+    position: relative;
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+}

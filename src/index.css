@@ -1,0 +1,325 @@
+/* Import Inter Font */
+@import url('https://rsms.me/inter/inter.css');
+
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f172a;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #5eead4;
+  color: #134e4a;
+}
+
+::-moz-selection {
+  background-color: #5eead4;
+  color: #134e4a;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #5eead4;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Portfolio specific styles */
+.portfolio-app {
+  min-height: 100vh;
+  background-color: #0f172a;
+}
+
+/* Navigation styles */
+nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-indicator {
+  height: 1px;
+  background-color: #475569;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 16px;
+  width: 32px;
+}
+
+nav a.active .nav-indicator {
+  width: 64px;
+  background-color: #e2e8f0;
+}
+
+nav a:hover .nav-indicator {
+  width: 64px;
+  background-color: #e2e8f0;
+}
+
+.nav-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748b;
+  transition: color 0.3s ease;
+}
+
+nav a.active .nav-text {
+  color: #e2e8f0;
+}
+
+nav a:hover .nav-text {
+  color: #e2e8f0;
+}
+
+/* Social links hover effect */
+ul[aria-label="Social media"] a {
+  transition: all 0.3s ease;
+}
+
+ul[aria-label="Social media"] a:hover {
+  color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* Experience and Project card hover effects */
+.group:hover {
+  cursor: pointer;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+.nav-indicator,
+.nav-text {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Technology tags */
+.tech-tag {
+  background-color: rgba(94, 234, 212, 0.1);
+  color: #5eead4;
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .portfolio-app {
+    padding: 48px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-app {
+    padding: 32px 16px;
+  }
+  
+  nav {
+    display: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Gradient overlay effect 
+.gradient-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  transition: background 300ms ease;
+}
+
+/* Section heading sticky styles */
+.section-heading-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-bottom: 16px;
+  width: 100vw;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 20px 24px;
+}
+
+@media (min-width: 1024px) {
+  .section-heading-sticky {
+    position: relative;
+    top: auto;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+    opacity: 0;
+  }
+}
+
+/* Project/Experience card base */
+.experience-card,
+.project-card {
+  position: relative;
+  border-radius: 8px;
+  padding: 4px 0;
+  transition: all 300ms ease;
+}
+
+/* Card hover glow effect */
+@media (min-width: 1024px) {
+  .experience-card:hover,
+  .project-card:hover {
+    background-color: rgba(30, 41, 59, 0.5);
+    box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  }
+}
+
+/* Link underline animation */
+.link-underline {
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 300ms ease;
+}
+
+.link-underline:hover {
+  border-bottom-color: #5eead4;
+}
+
+/* External link icon animation */
+.external-link-icon {
+  display: inline-block;
+  margin-left: 4px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 300ms ease;
+  transform: translateY(1px);
+}
+
+.group:hover .external-link-icon {
+  transform: translate(4px, -4px);
+}
+
+/* Folder icon styling */
+.folder-icon {
+  color: #64748b;
+  width: 48px;
+  height: 48px;
+}
+
+/* Resume link hover effect */
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
+.resume-link:hover .link-underline {
+  border-bottom-color: #5eead4;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Prevent motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .gradient-overlay,
+  nav,
+  ul[aria-label="Social media"] {
+    display: none;
+  }
+  
+  body {
+    background-color: white;
+    color: black;
+  }
+}
